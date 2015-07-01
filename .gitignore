@@ -7,4 +7,6 @@
 __pycache__/
 local_settings.py
 
+*.sqlite3
+
 
