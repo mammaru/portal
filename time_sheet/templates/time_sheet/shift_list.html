@@ -12,7 +12,7 @@ table {
 
 {% block content %}
     <h3 class="page-header">勤務時間一覧</h3>
-    <!--<a href="{# url 'cms:book_add' #}" class="btn btn-default btn-sm">追加</a>-->
+    <a href="{% url 'time_sheet:shift_add' %}" class="btn btn-default btn-sm">追加</a>
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -31,10 +31,8 @@ table {
           <td>{{ shift.finish }}</td>
           <td>タスク</td>
           <td>
-            <!--
-            <a href="{# url 'time_sheet:shift_mod' shift_id=shift.id #}" class="btn btn-default btn-sm">修正</a>
-            <a href="{# url 'time_sheet:shift_del' shift_id=shift.id #}" class="btn btn-default btn-sm">削除</a>
-            -->
+            <a href="{% url 'time_sheet:shift_modify' shift_id=shift.id %}" class="btn btn-default btn-sm">修正</a>
+            <a href="{% url 'time_sheet:shift_delete' shift_id=shift.id %}" class="btn btn-default btn-sm">削除</a>
           </td>
         </tr>
         {% endfor %}
