@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
     'time_sheet',
 )
 
@@ -107,3 +108,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+##################
+# AUTHENTICATION #
+##################
+
+#AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
+
+LOGIN_URL = '/accounts/login/'
+
+LOGOUT_URL = '/accounts/logout/'
+
+LOGIN_REDIRECT_URL = '/time_sheet' # for a while
