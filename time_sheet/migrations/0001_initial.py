@@ -23,7 +23,8 @@ class Migration(migrations.Migration):
             name='Shift',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('working_hour', models.TimeField()),
+                ('start', models.TimeField()),
+                ('finish', models.TimeField()),
             ],
         ),
     ]

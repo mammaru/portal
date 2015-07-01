@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 
 # Create your models here.
@@ -5,8 +6,8 @@ from django.db import models
 class Shift(models.Model):
   start = models.TimeField()
   finish = models.TimeField()
-  def __unicode__(self):
-      return self.start
+  #def __unicode__(self):
+      #return self.start
 
 class Duty(models.Model):
   date = models.DateField()
