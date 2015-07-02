@@ -11,32 +11,13 @@
     <form action="{% url 'time_sheet:shift_add' %}" method="post" class="form-horizontal" role="form">
     {% endif %}
       {% csrf_token %}
-      {#{ form|bootstrap_horizontal }#}
-
-<div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-    <input type="text" class="form-control" id="id_start" name="start" value="" placeholder="Start">
-    <span class="input-group-addon">
-        <span class="glyphicon glyphicon-time"></span>
-    </span>
-</div>
-
-<div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-    <input type="text" class="form-control" value="" placeholder="Finish">
-    <span class="input-group-addon">
-        <span class="glyphicon glyphicon-time"></span>
-    </span>
-</div>
-
+      {{ form|bootstrap_horizontal }}
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-primary">送信</button>
         </div>
       </div>
     </form>
-
-<script type="text/javascript">
-$('.clockpicker').clockpicker();
-</script>
 
     <a href="{% url 'time_sheet:shift_list' %}" class="btn btn-default btn-sm">戻る</a>
 {% endblock content %}
