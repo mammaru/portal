@@ -6,12 +6,21 @@
 {% block content %}
     <h3 class="page-header">シフトの編集</h3>
     {% if shift_id %}
-    <form action="{% url 'time_sheet:shift_modify' shift_id=shift_id %}" method="post" class="form-horizontal" role="form">
+    <!--form action="{% url 'time_sheet:shift_modify' shift_id=shift_id %}" method="post" class="form-horizontal" role="form"-->
     {% else %}
-    <form action="{% url 'time_sheet:shift_add' %}" method="post" class="form-horizontal" role="form">
+    <!--form action="{% url 'time_sheet:shift_add' %}" method="post" class="form-horizontal" role="form"-->
+
+<div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+  <input action="{% url 'time_sheet:shift_add' %}" method="post" type="text" class="form-horizontal" id="id_start" name="start" value="" placeholder="Start">
+  <form action="{% url 'time_sheet:shift_add' %}" method="post" class="form-horizontal" role="form">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+    </span>
+</div>
+
     {% endif %}
       {% csrf_token %}
-      {#{ form|bootstrap_horizontal }#}
+      {{ form|bootstrap_horizontal }}
 
 <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
     <input type="text" class="form-control" id="id_start" name="start" value="" placeholder="Start">

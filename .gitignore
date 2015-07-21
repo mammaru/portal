@@ -9,4 +9,6 @@ local_settings.py
 
 *.sqlite3
 
+*/.DS_Store
+#static/.DS_Store
 
